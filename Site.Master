@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="baikiemtragiuaky.SiteMaster" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%: Page.Title %> - Quản lý sinh viên</title>
+    <link href="<%: ResolveUrl("~/Content/bootstrap.min.css") %>" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid min-vh-100 d-flex flex-column px-0">
+            <header class="bg-white border-bottom shadow-sm px-4 py-2">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a class="d-flex align-items-center gap-2 text-decoration-none text-dark" href="<%: ResolveUrl("~/Default.aspx") %>">
+                        <span class="fs-1 text-success">◎</span>
+                        <span><strong class="fs-4 d-block lh-1">ASP.NET</strong><small class="text-secondary">Web Forms MasterPage</small></span>
+                    </a>
+                    <div class="d-none d-md-flex gap-4 text-success text-center small fw-semibold">
+                        <a class="text-decoration-none text-success" href="#"><svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.5 1a.5.5 0 0 1 .5.5V2h2v-.5a.5.5 0 0 1 1 0V2h1a1 1 0 0 1 1 1v3.2a4.5 4.5 0 0 0-1.2-.2H11V3H3v9h3.2c.2.4.5.8.9 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h1v-.5a.5.5 0 0 1 1 0V2h2v-.5A.5.5 0 0 1 6.5 1z" /><path d="M13.5 8.2a2.8 2.8 0 0 0-.7-.4l.2-.8-.9-.4-.5.7a2.8 2.8 0 0 0-.8 0l-.5-.7-.9.4.2.8a2.8 2.8 0 0 0-.6.6l-.8-.2-.4.9.7.5a2.8 2.8 0 0 0 0 .8l-.7.5.4.9.8-.2c.2.2.4.4.7.5l-.2.8.9.4.5-.7c.3.1.6.1.9 0l.5.7.9-.4-.2-.8c.2-.2.5-.4.6-.7l.8.2.4-.9-.7-.5a2.8 2.8 0 0 0 0-.8l.7-.5-.4-.9-.8.2zM11.7 11a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z" /></svg><br /><small class="text-dark">HỆ THỐNG</small></a>
+                        <a class="text-decoration-none text-success" href="#"><svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm4.5 5.5A4.5 4.5 0 0 0 8 9a4.5 4.5 0 0 0-4.5 4.5.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5z" /></svg><br /><small class="text-dark">HỒ SƠ</small></a>
+                        <a class="text-decoration-none text-success" href="#"><svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1 14h14v1H1v-1zm1-1V7h2v6H2zm4 0V3h2v10H6zm4 0V5h2v8h-2zm4 0V1h2v12h-2z" /></svg><br /><small class="text-dark">BÁO CÁO</small></a>
+                        <a class="text-decoration-none text-success" href="#"><svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H9v2h2v1H5v-1h2v-2H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm0 1v7h12V2H2z" /></svg><br /><small class="text-dark">ỨNG DỤNG</small></a>
+                    </div>
+                </div>
+            </header>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-success py-0" aria-label="Điều hướng chính">
+                <div class="container-fluid px-4">
+                    <button class="navbar-toggler my-1" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Mở menu"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="mainNavigation">
+                        <div class="navbar-nav">
+                            <a class="nav-link px-3" href="<%: ResolveUrl("~/Default.aspx") %>">Trang chủ</a>
+                            <a class="nav-link px-3" href="<%: ResolveUrl("~/About.aspx") %>">Giới thiệu</a>
+                            <a class="nav-link px-3" href="#">Lớp học</a>
+                            <a class="nav-link px-3" href="<%: ResolveUrl("~/QuanLySinhVien.aspx") %>">Quản lý sinh viên</a>
+                            <a class="nav-link px-3" href="#">Thống kê</a>
+                            <a class="nav-link px-3" href="<%: ResolveUrl("~/Contact.aspx") %>">Liên hệ</a>
+                        </div>
+                        <a class="nav-link text-light ms-auto d-flex align-items-center gap-1" href="#">Đăng nhập <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 7a5 5 0 0 0-10 0h1.2a3.8 3.8 0 0 1 7.6 0H13z" /></svg></a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="row g-0 flex-grow-1">
+                <aside class="col-12 col-md-3 col-lg-2 bg-dark" aria-label="Menu quản lý">
+                    <div class="nav nav-pills flex-column p-2">
+                        <a class="nav-link text-white" href="<%: ResolveUrl("~/Default.aspx") %>"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="me-2" aria-hidden="true"><path d="m8 2 6 5v7H2V7l6-5zm0 1.3L3 7.5V13h2V9h6v4h2V7.5L8 3.3z" /></svg>Trang chủ</a>
+                        <a class="nav-link text-white" href="#"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="me-2" aria-hidden="true"><path d="M2 2h12v12H2V2zm2 2v2h2V4H4zm3 0v2h2V4H7zm3 0v2h2V4h-2zM4 7v2h2V7H4zm3 0v2h2V7H7zm3 0v2h2V7h-2zM4 10v2h2v-2H4zm3 0v2h2v-2H7zm3 0v2h2v-2h-2z" /></svg>Quản lý lớp học</a>
+                        <a class="nav-link text-white" href="<%: ResolveUrl("~/QuanLySinhVien.aspx") %>"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="me-2" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm4.5 5.5A4.5 4.5 0 0 0 8 9a4.5 4.5 0 0 0-4.5 4.5.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5z" /></svg>Quản lý sinh viên</a>
+                        <a class="nav-link text-white" href="#"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="me-2" aria-hidden="true"><path d="M2 1h9l3 3v11H2V1zm1 1v12h10V5h-3V2H3zm2 5h6v1H5V7zm0 2h6v1H5V9zm0 2h4v1H5v-1z" /><path d="m11.2 10.8.7.7 1.7-1.7.7.7-2.4 2.4-1.4-1.4.7-.7z" /></svg>Tra cứu và điểm danh</a>
+                        <a class="nav-link text-white" href="#"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="me-2" aria-hidden="true"><path d="M7 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 1.2a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6zM1 15a6 6 0 0 1 12 0h-1.3a4.7 4.7 0 0 0-9.4 0H1zm12.2-8.4 2.3-2.3.8.8-2.3 2.3-.8-.8z" /></svg>Quản lý đăng nhập</a>
+                    </div>
+                </aside>
+
+                <main class="col-12 col-md-9 col-lg-10 p-3 p-lg-4">
+                    <div class="d-flex align-items-center gap-2 border-bottom pb-2 mb-3">
+                        <svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor" class="text-success" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm4.5 5.5A4.5 4.5 0 0 0 8 9a4.5 4.5 0 0 0-4.5 4.5.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5z" /></svg>
+                        <h1 class="h4 fw-bold mb-0 text-uppercase">Quản lý sinh viên</h1>
+                    </div>
+                    <div class="container-fluid px-0">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+                    </div>
+                </main>
+            </div>
+
+            <footer class="border-top bg-light text-center text-secondary small py-2">Khoa CNTT / Lớp TT1D23 - Trường ĐH CNVT</footer>
+        </div>
+        <script src="<%: ResolveUrl("~/Scripts/bootstrap.bundle.min.js") %>"></script>
+        <script>
+            function showStudentModal() {
+                var modalElement = document.getElementById('studentModal');
+                if (modalElement && window.bootstrap) {
+                    bootstrap.Modal.getOrCreateInstance(modalElement).show();
+                }
+            }
+
+            document.querySelectorAll('aside .nav-link').forEach(function (link) {
+                link.addEventListener('mouseenter', function () {
+                    this.classList.add('text-warning');
+                    this.classList.remove('text-white');
+                });
+                link.addEventListener('mouseleave', function () {
+                    this.classList.remove('text-warning');
+                    this.classList.add('text-white');
+                });
+            });
+        </script>
+    </form>
+</body>
+</html>
+

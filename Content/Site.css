@@ -1,0 +1,494 @@
+﻿/* Main application layout */
+:root {
+    --navy: #06345b;
+    --navy-dark: #032b4d;
+    --blue: #0875d1;
+    --blue-dark: #0568bc;
+    --line: #dbe3eb;
+    --text: #263746;
+    --muted: #708090;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+form {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    background: #ffffff;
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.app-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #fff;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 61px;
+    padding: 0 25px;
+    border: 1px solid #dce2e7;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
+}
+
+.brand-block,
+.quick-actions,
+.quick-action,
+.top-nav-links,
+.side-link,
+.page-heading,
+.form-title,
+.student-actions {
+    display: flex;
+    align-items: center;
+}
+
+.brand-block {
+    gap: 11px;
+}
+
+.brand-mark {
+    width: 39px;
+    height: 39px;
+    color: #1681c7;
+}
+
+.brand-svg,
+.quick-icon,
+.login-icon,
+.side-icon,
+.heading-icon {
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.brand-svg {
+    width: 39px;
+    height: 39px;
+    stroke-width: 1.8;
+}
+
+.brand-name {
+    color: #17222d;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    line-height: 19px;
+}
+
+.brand-caption {
+    color: #71808b;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .2px;
+}
+
+.quick-actions {
+    gap: 32px;
+    height: 100%;
+}
+
+.quick-action {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    min-width: 48px;
+    color: #075fbd;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.quick-icon {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.7;
+}
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 27px;
+    padding: 0 20px;
+    background: var(--blue);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.top-nav-links {
+    height: 27px;
+    gap: 0;
+}
+
+.top-nav-links a {
+    padding: 0 21px;
+    line-height: 13px;
+    border-right: 1px solid rgba(255, 255, 255, .25);
+}
+
+.top-nav-links a:first-child {
+    padding-left: 0;
+}
+
+.top-nav-links a:hover,
+.top-nav-links a:focus {
+    color: #ffdf53;
+}
+
+.login-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.login-icon {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2;
+}
+
+.workspace {
+    display: flex;
+    flex: 1;
+    min-height: 490px;
+}
+
+.side-nav {
+    flex: 0 0 210px;
+    background: var(--navy);
+}
+
+.side-link {
+    min-height: 40px;
+    gap: 14px;
+    padding: 0 15px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+
+.side-link:hover,
+.side-link:focus,
+.side-link:first-child,
+.side-link:nth-child(3) {
+    background: var(--blue-dark);
+}
+
+.side-icon {
+    flex: 0 0 17px;
+    width: 17px;
+    height: 17px;
+    stroke-width: 2;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 22px 24px;
+    background: #fff;
+}
+
+.page-heading {
+    gap: 10px;
+    height: 34px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #e2e7eb;
+}
+
+.heading-icon {
+    width: 25px;
+    height: 25px;
+    color: #0573c7;
+    stroke-width: 2;
+}
+
+.page-heading h1 {
+    margin: 0;
+    color: #29333c;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .25px;
+}
+
+.content-area,
+.student-page {
+    width: 100%;
+}
+
+.toolbar-card,
+.student-card {
+    margin-bottom: 12px;
+    border: 1px solid #e1e7ec;
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(20, 45, 70, .06);
+}
+
+.toolbar-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 11px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    height: 29px;
+    max-width: 315px;
+    padding: 0 9px;
+    border: 1px solid #d9e1e8;
+    color: #84919d;
+}
+
+.search-box span {
+    margin-right: 7px;
+    font-size: 16px;
+}
+
+.toolbar-input,
+.toolbar-select,
+.student-input {
+    width: 100%;
+    max-width: none;
+    min-height: 29px;
+    padding: 5px 8px;
+    border: 1px solid #d9e1e8;
+    border-radius: 2px;
+    color: #51606e;
+    background: #fff;
+    font: inherit;
+}
+
+.search-box .toolbar-input {
+    min-height: 25px;
+    padding: 2px 0;
+    border: 0;
+    outline: 0;
+}
+
+.toolbar-select {
+    width: 145px;
+}
+
+.toolbar-button,
+.add-button,
+.student-button {
+    min-height: 29px;
+    padding: 0 13px;
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    background: var(--blue);
+    font: 600 11px "Segoe UI", Arial, sans-serif;
+    cursor: pointer;
+}
+
+.toolbar-button:hover,
+.add-button:hover,
+.student-button:hover {
+    background: #0565b3;
+}
+
+.add-button {
+    margin-left: auto;
+    background: #20a653;
+}
+
+.form-title,
+.table-title {
+    min-height: 35px;
+    padding: 0 13px;
+    color: #30404d;
+    font-size: 12px;
+    font-weight: 700;
+    border-bottom: 1px solid #e3e9ee;
+}
+
+.form-title {
+    justify-content: space-between;
+}
+
+.student-form {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 1fr)) auto;
+    gap: 10px;
+    padding: 12px;
+}
+
+.student-field label {
+    display: block;
+    margin-bottom: 5px;
+    color: #667583;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.student-actions {
+    align-items: flex-end;
+    gap: 5px;
+    padding-bottom: 0;
+}
+
+.student-button {
+    white-space: nowrap;
+}
+
+.student-button.secondary {
+    color: #566572;
+    background: #edf1f4;
+}
+
+.student-button.danger {
+    background: #e45454;
+}
+
+.student-message {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+.student-grid {
+    width: 100%;
+    border-collapse: collapse;
+    color: #4d5b67;
+    font-size: 10px;
+}
+
+.student-grid th {
+    padding: 9px 10px;
+    color: #526171;
+    background: #f1f5f8;
+    font-size: 9px;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.student-grid td {
+    padding: 8px 10px;
+    border-top: 1px solid #e8edf1;
+    white-space: nowrap;
+}
+
+.student-grid tr:hover td {
+    background: #f8fbfd;
+}
+
+.student-grid a {
+    color: #1765b0;
+    font-weight: 600;
+}
+
+.site-footer {
+    min-height: 31px;
+    padding: 9px 10px;
+    border-top: 1px solid #e1e6ea;
+    color: #65727d;
+    background: #fafbfc;
+    font-size: 10px;
+    text-align: center;
+}
+
+/* Keep the default template pages consistent with the shell. */
+.content-area > main {
+    margin: 0;
+    padding: 8px 12px;
+}
+
+.content-area h2,
+.content-area h3 {
+    color: #29333c;
+}
+
+@media (max-width: 800px) {
+    .quick-actions {
+        gap: 10px;
+    }
+
+    .top-nav-links a {
+        padding: 0 8px;
+    }
+
+    .side-nav {
+        flex-basis: 170px;
+    }
+
+    .student-form {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+    }
+
+    .student-actions {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        padding: 0 10px;
+    }
+
+    .quick-actions,
+    .login-link {
+        display: none;
+    }
+
+    .top-nav {
+        overflow-x: auto;
+    }
+
+    .side-nav {
+        flex-basis: 52px;
+    }
+
+    .side-link {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .side-link span {
+        display: none;
+    }
+
+    .main-content {
+        padding: 12px 8px;
+    }
+
+    .toolbar-card {
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        max-width: none;
+        flex-basis: 100%;
+    }
+}
